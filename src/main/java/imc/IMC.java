@@ -67,7 +67,6 @@ public class IMC extends Application {
 		pesoText.textProperty().bindBidirectional(pesoProperty, new NumberStringConverter());
 		alturaText.textProperty().bindBidirectional(alturaProperty, new NumberStringConverter());
 			
-		//preguntar 
 			
 		alturaProperty.addListener((o,ov,nv)->{
 			double newValue= nv.doubleValue();
@@ -78,8 +77,6 @@ public class IMC extends Application {
 		
 		imcProperty.bind(pesoProperty.divide((alturaProperty.divide(100)).multiply(alturaProperty.divide(100))));
 		
-		//En los listener se pueden poner funciones
-		//imcProperty.addListener((o,ov,nv) ->{ System.out.println(calculoIMC(nv.intValue(), ov.intValue()));});
 		
 		imcProperty.addListener((o,ov,nv) ->{
 			double newValue= nv.doubleValue();
